@@ -26,12 +26,20 @@ IntelliJ IDEA Community Edition
 The tests here were written to
 fit [https://github.com/andreasneuber/automatic-test-sample-site](https://github.com/andreasneuber/automatic-test-sample-site)
 
-README in this project explains how to start the sample site.
+README in that project explains how to start the sample site.
 
-## Setup
+## Setup Java
+- Add Java SDK as outlined here: https://www.jetbrains.com/help/idea/sdk.html#supported-sdks
+- Add system variable `JAVA_HOME` with path to SDK
+- Reboot machine
+
+## Setup Maven
 
 Setup Maven, otherwise `mvn` commands below cannot be executed.
 See [https://maven.apache.org/install.html](https://maven.apache.org/install.html)
+
+Steps for Windows well explained here: https://phoenixnap.com/kb/install-maven-windows (don't forget to reboot).
+Verify with `mvn --version`
 
 ## How to execute the tests
 
