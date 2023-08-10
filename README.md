@@ -79,3 +79,15 @@ Through IntelliJ UI. Right-click on project name, then choose "Run > (NG) All Te
 2) No instantiation of page objects and generic utils in step definitions (so no code like `xyz = new Class()` )
 3) Follow official Java naming conventions - https://www.thoughtco.com/using-java-naming-conventions-2034199
 
+## FAQ
+
+#### `mvn test` fails `java.lang.IllegalStateException: Unable to load cache item` - how to debug?
+[Linux]
+
+Update Maven to version 3.9.4
+- https://phoenixnap.com/kb/install-maven-on-ubuntu , do "Step 2: Download and Install Maven" (only this step, and use version 3.9.4 instead)
+- Add below to .bashrc or .zshrc file
+```
+export MAVEN_HOME="/opt/maven"
+export PATH=$MAVEN_HOME/bin:$PATH
+```
