@@ -81,7 +81,7 @@ Through IntelliJ UI. Right-click on project name, then choose "Run > (NG) All Te
 
 ## FAQ
 
-#### `mvn test` fails `java.lang.IllegalStateException: Unable to load cache item` - how to debug?
+### `mvn test` fails `java.lang.IllegalStateException: Unable to load cache item` - how to debug?
 [Linux]
 
 Update Maven to version 3.9.4
@@ -91,3 +91,8 @@ Update Maven to version 3.9.4
 export MAVEN_HOME="/opt/maven"
 export PATH=$MAVEN_HOME/bin:$PATH
 ```
+
+### `I'd like to implement Selenium Grid running in Docker container - where to start?`
+
+Good starting point is to look at file `src\test\java\utils\TestBase.java` and 
+this [GitHub repo](https://github.com/atulchavan10000/selenium-grid-docker-compose).

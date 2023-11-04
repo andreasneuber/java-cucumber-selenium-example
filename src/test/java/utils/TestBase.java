@@ -5,10 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Enumeration;
@@ -41,6 +44,13 @@ public class TestBase {
                     // https://www.browserstack.com/guide/launch-edge-browser-in-selenium
                     System.setProperty("webdriver.edge.driver", "Path to EdgeDriver.exe");
                     driver = new EdgeDriver();
+                }
+                case "remote" -> {
+                    // for Selenium Grid
+                    DesiredCapabilities capabilities = new DesiredCapabilities();
+                    capabilities.setBrowserName("chrome");
+
+                    driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
                 }
             }
 
